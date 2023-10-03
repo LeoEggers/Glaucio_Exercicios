@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex02</title>
+</head>
+<body>
+    <h1>Ex02</h1>
+    <p>Faça um programa que peça 10 números inteiros, calcule e mostre a quantidade de
+        números pares e a quantidade de números ímpares.</p>
+    <span>n#01: </span>
+    <input type="number" value="numero 1" id="txtn1"><br>
+    <span>n#02: </span>
+    <input type="number" id="txtn2"><br>
+    <span>n#03: </span>
+    <input type="number" id="txtn3"><br>
+    <span>n#04: </span>
+    <input type="number" id="txtn4"><br>
+    <span>n#05: </span>
+    <input type="number" id="txtn5"><br>
+    <span>n#06: </span>
+    <input type="number" id="txtn6"><br>
+    <span>n#07: </span>
+    <input type="number" id="txtn7"><br>
+    <span>n#08: </span>
+    <input type="number" id="txtn8"><br>
+    <span>n#09: </span>
+    <input type="number" id="txtn9"><br>
+    <span>n#10:</span>
+    <input type="number" id="txtn10"><br>
+    <button onclick="rodar()">OK</button>
+
+    <p id="numPar">Quantidade de Pares: </p>
+    <p id="numImpar">Quantidade de Ímpares: </p>
+
+    <script>
+    function rodar() {
+            var numeros = [];
+            var pares = 0;
+            var impares = 0;
+
+            for (var c = 1; c <= 10; c++) {
+                var id = "txtn" + c;
+                var n = Number(document.getElementById(id).value);
+                numeros.push(n);
+
+                if (n % 2 === 0) {
+                    pares++;
+                } else {
+                    impares++;
+                }
+            }
+
+            var pPares = document.getElementById("numPar")
+            var pImpares = document.getElementById("numImpar")
+            pPares.innerText = "Quantidade de Pares: " + pares
+            pImpares.innerText = "Quantidade de Ímpares: " + impares
+
+        }
+    </script>
+</body>
+</html>

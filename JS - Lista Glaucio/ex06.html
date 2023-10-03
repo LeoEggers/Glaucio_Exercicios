@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex06</title>
+</head>
+<body>
+    <h1>Ex06</h1>
+    <p>Escreva uma função que informe o retorno de um investimento (montante) com
+        base nos valores do capital inicial, tempo em meses e taxa de juros mensal,
+        fornecidos pelo usuário.
+        Use a fórmula: M = C * (1+i)t
+        Onde:
+        <ul>
+            <li>C = Capital inicial investido</li>
+            <li>i = Taxa de juros, em percentual</li>
+            <li>t = Tempo do investimento, em meses</li>
+        </ul>
+        Exiba o resultado com duas casas decimais.</p>
+
+    <span>Valor do investimento: R$</span>
+    <input type="number" id="capitalInicial">
+    <br>
+    
+    <span>Taxa de juros mensal (%):</span>
+    <input type="number" id="taxaJuros">
+    <br>
+    
+    <span>Tempo do investimento (em meses):</span>
+    <input type="number" id="tempoMeses">
+    <br>
+    
+    <button onclick="calcularMontante()">Calcular</button>
+    
+    <p>O montante do investimento é: <span id="resultadoMontante"></span></p>
+
+    <script>
+        function calcularMontante() {
+            var capitalInicial = parseFloat(document.getElementById("capitalInicial").value);
+            var taxaJuros = parseFloat(document.getElementById("taxaJuros").value) / 100; 
+            var tempoMeses = parseInt(document.getElementById("tempoMeses").value);
+
+            var montante = capitalInicial * Math.pow(1 + taxaJuros, tempoMeses);
+            montante = montante.toFixed(2);
+            document.getElementById("resultadoMontante").textContent = "R$" + montante;
+        }
+    </script>
+</body>
+</html>
